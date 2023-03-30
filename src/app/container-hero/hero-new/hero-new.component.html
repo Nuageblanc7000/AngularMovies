@@ -1,0 +1,31 @@
+<section class="hero" *ngIf="movie">
+  <section
+    class="hero-inside"
+    [ngStyle]="{
+      backgroundImage:
+        ' url(' +
+        'https://image.tmdb.org/t/p/original/' +
+        movie.backdrop_path +
+        ') '
+    }"
+  >
+    <section class="info-container">
+      <div class="overlay"></div>
+
+      <article class="info-hero">
+        <p class="title" [ngClass]="{ reduce: action }">
+          {{ movie.original_title | uppercase }}
+        </p>
+        <div class="description" [ngClass]="{ textDown: action }">
+          <p>
+            {{ movie.overview }}
+          </p>
+        </div>
+        <div class="action-hero">
+          <button class="btn-t1">Voir le film</button>
+          <button class="btn-t2">Plus d'info</button>
+        </div>
+      </article>
+    </section>
+  </section>
+</section>

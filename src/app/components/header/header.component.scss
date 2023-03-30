@@ -1,0 +1,23 @@
+nav {
+  top: 0;
+  position: sticky;
+  z-index: 1000;
+
+  width: 100%;
+  color: white;
+  background: rgba(255, 255, 255, 0.11);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.3px);
+  -webkit-backdrop-filter: blur(11.3px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  header {
+    .logo {
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+  img {
+    max-width: 80px;
+    object-fit: contain;
+  }
+}

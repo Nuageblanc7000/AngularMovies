@@ -1,0 +1,65 @@
+<div class="all-content-pop" [@openClose]="view ? 'open' : 'close'">
+  <div *ngIf="movie" class="overlay" (click)="close()">
+    <img src="../../../assets/images/net.png" alt="net" />
+  </div>
+
+  <div *ngIf="movie" class="hero">
+    <figure
+      class="hero-inside"
+      [ngStyle]="{
+        backgroundImage:
+          ' url(' +
+          'https://image.tmdb.org/t/p/original/' +
+          movie.backdrop_path +
+          ') '
+      }"
+    >
+      <div *ngIf="movie" class="overlay-2"></div>
+      <button (click)="close()" class="closed-pop">X</button>
+      <div class="title">
+        <h2>{{ movie.title }}</h2>
+      </div>
+    </figure>
+    <div class="container-info">
+      <div class="info-movie">
+        <h6>langues:</h6>
+        <span *ngFor="let item of movie.spoken_languages">
+          {{ item.english_name }}
+        </span>
+      </div>
+      <div class="description">
+        <p>
+          {{ movie.overview }}
+        </p>
+      </div>
+      <div class="action">
+        <button (click)="onNavigate(movie.id)" class="btn btn-view my-10">
+          Voir le film
+          <span>
+            <svg
+              viewBox="0 0 24 24"
+              fill="black"
+              style="width: 20px; height: 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.5963 10.3318C16.8872 11.0694 16.8872 12.9307 15.5963 13.6683L11.154 16.2068C9.9715 16.8825 8.5002 16.0287 8.5002 14.6667L8.5002 9.33339C8.5002 7.97146 9.9715 7.11762 11.154 7.79333L15.5963 10.3318Z"
+                  fill="#323232"
+                ></path>
+              </g>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

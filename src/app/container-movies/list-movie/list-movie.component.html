@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="card" *ngFor="let item of movies?.results">
+      <div (click)="open(item.id)" class="card">
+        <img
+          [src]="['https://image.tmdb.org/t/p/original/' + item.poster_path]"
+        />
+        <div class="descriptions">
+          <h1>{{ item.original_title }}</h1>
+          <p>
+            {{ item.overview }}
+          </p>
+          <!-- <button>
+            <i class="fab fa-youtube"></i>
+            Play trailer on YouTube
+          </button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

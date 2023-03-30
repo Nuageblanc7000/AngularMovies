@@ -1,0 +1,11 @@
+<app-list-movie
+  [view]="view"
+  (onClick)="open($event)"
+  [movies]="movies"
+></app-list-movie>
+<app-pop
+  [view]="view"
+  (onClick)="close($event)"
+  [movie]="movie"
+  (onNavigateEmit)="onNavigateMovie($event)"
+></app-pop>

@@ -1,0 +1,50 @@
+ul {
+  transition: all 1s ease;
+  li {
+    transition: width 1s ease;
+    display: inline-block;
+    margin: 0 10px;
+    a {
+      color: white;
+      font-size: 1.1rem;
+      padding: 10px 20px;
+      border-radius: 3px;
+      display: block;
+      width: inherit;
+      height: inherit;
+      &:hover {
+        background-color: var(--red);
+      }
+      transition: background-color 0.4s;
+    }
+
+    .search {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      input {
+        border: 1px solid white;
+        background: transparent;
+        padding: 0.2rem 0.1rem;
+        margin: 0 10px;
+        width: 0;
+        opacity: 0;
+        color: white;
+        font-size: 1rem;
+        transition: width 0.8s ease, opacity 1s ease;
+        &:focus {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+      label {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.logo-n {
+  max-width: 50px;
+  object-fit: contain;
+}

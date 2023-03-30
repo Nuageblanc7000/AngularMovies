@@ -1,0 +1,18 @@
+<div class="container-video" [ngClass]="{ 'bg-net': !video }">
+  <div class="not-movie" *ngIf="!video">
+    <H2>Oups il semblerait que le film ne soit plus disponible</H2>
+    <button (click)="back()" class="btn btn-view">
+      Retour vers la liste de film
+    </button>
+  </div>
+  <iframe
+    *ngIf="video"
+    width="1280"
+    height="720"
+    [src]="onValidUrl()"
+    [title]="video.name"
+    frameborder="0"
+    allow="accelerometer; autoplay;  clipboard-write; encrypted-media; gyroscope; controls='false'"
+    allowfullscreen
+  ></iframe>
+</div>
